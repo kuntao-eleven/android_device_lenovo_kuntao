@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources>
+    <string name="fp_gestures_title">Hareketler</string>
+    <string name="fp_gestures_summary">Gelişmiş parmak izi hareketleri</string>
+    <string name="fingerprint_kuntao_title">Parmak izi</string>
     <string name="fingerprint_gestures_title">Parmak izi hareketleri</string>
     <string name="fingerprint_gestures_summary">Geri gitmek için dokunun, son uygulamaları görüntülemek için uzun basın</string>
 </resources>

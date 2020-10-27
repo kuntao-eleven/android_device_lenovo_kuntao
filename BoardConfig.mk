@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -54,7 +54,6 @@ AUDIO_FEATURE_ENABLED_CUSTOMSTEREO := true
 AUDIO_FEATURE_ENABLED_DEV_ARBI := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_HFP := true
@@ -82,24 +81,24 @@ TARGET_TS_MAKEUP := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# Charger
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# CNE and DPM
+BOARD_USES_QCNE := true
+
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
     ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
       WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+      WITH_DEXPREOPT := true
     endif
   endif
 endif
-
-# Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
@@ -110,29 +109,29 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /vendor/bin/vfmService=24
 
 # FM
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPU
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
-MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_SCREEN_DENSITY := 440
+TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
-TARGET_USES_ION := true
+TARGET_USES_OVERLAY := true
+USE_OPENGL_RENDERER := true
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+# UI
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS :=  0x2000
+
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci
-BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET = 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -164,6 +163,22 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
+
+# HIDL
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+
+# Media
+TARGET_USES_MEDIA_EXTENSIONS := true
+
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/board_properties/tpd_suspend_status"
 TARGET_USES_INTERACTION_BOOST := true
@@ -171,15 +186,15 @@ TARGET_USES_INTERACTION_BOOST := true
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
-# Qualcomm support
+# Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
+DISABLE_RILD_OEM_HOOK := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-TARGET_USES_OLD_MNC_FORMAT := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2017-11-01
@@ -191,13 +206,10 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := true
 
-# TWRP
-ifeq ($(WITH_TWRP),true)
-include $(DEVICE_PATH)/twrp.mk
-endif
-
-# WiFi
+# Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn

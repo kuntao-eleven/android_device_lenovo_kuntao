@@ -21,6 +21,8 @@ allow vfmService tee_device:chr_file rw_file_perms;
 
 allow vfmService uhid_device:chr_file rw_file_perms;
 
+allow vfmService property_socket:sock_file write;
+
 allow vfmService vfsspi_data_file:dir rw_dir_perms;
 allow vfmService vfsspi_data_file:file create_file_perms;
 
@@ -29,4 +31,4 @@ allow vfmService vfsspi_device:chr_file rw_file_perms;
 allow vfmService vfsspi_device:fifo_file create_file_perms;
 allow vfmService vfsspi_device:file create_file_perms;
 
-get_prop(vfmService, vendor_fp_gesture_prop);
+set_prop(vfmService, vendor_fp_gesture_prop);

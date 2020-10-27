@@ -5,3 +5,4 @@ type sensors_data_file, file_type, data_file_type, core_data_file_type;
 type sysfs_temperature, fs_type, sysfs_type;
 type sysfs_touchpanel, fs_type, sysfs_type;
 type vfsspi_data_file, file_type, data_file_type, core_data_file_type;
+type sysfs_fps, sysfs_type, fs_type;

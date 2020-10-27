@@ -1,0 +1,4 @@
+dontaudit qti_init_shell self:capability { dac_override };
+
+# Required for FM
+allow qti_init_shell self:socket create;
