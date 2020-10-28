@@ -1,2 +1,8 @@
 # FM radio needs to set fm properties
 set_prop(system_app, fm_prop)
+
+# Battery health
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file rw_file_perms;
+allow system_app sysfs_usb_supply:dir search;
+allow system_app sysfs_usb_supply:file rw_file_perms;
