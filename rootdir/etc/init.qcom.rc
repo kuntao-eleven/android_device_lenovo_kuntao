@@ -165,6 +165,7 @@ on post-fs-data
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
+    chown system system /mnt/vendor/persist/WCNSS_wlan_dictionary.dat
     chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
 
     # Mark the copy complete flag to not completed
