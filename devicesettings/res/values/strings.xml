@@ -16,8 +16,7 @@
 -->
 <resources>
     <string name="fp_gestures_title">Gestures</string>
-    <string name="fp_gestures_summary">Advanced fingerprint gestures</string>
     <string name="fingerprint_kuntao_title">Fingerprint</string>
     <string name="fingerprint_gestures_title">Fingerprint gestures</string>
-    <string name="fingerprint_gestures_summary">Tap to go back, long press to view recents</string>
+    <string name="fingerprint_gestures_summary">Tap to go back, long press to view recents. | Disable navbar then will working</string>
 </resources>

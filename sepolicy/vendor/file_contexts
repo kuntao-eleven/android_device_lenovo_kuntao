@@ -28,6 +28,13 @@
 # Root files
 /firmware(/.*)?                                                            u:object_r:firmware_file:s0
 
+# Lenovo parts
+/sys/devices/soc/qpnp-flash-led-22/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
+/sys/devices/soc/qpnp-flash-led-22/leds/led:torch_1/max_brightness          u:object_r:sysfs_torch:s0
+/sys/devices/platform/kcal_ctrl.0(/.*)?                                     u:object_r:sysfs_kcal:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_level                   u:object_r:sysfs_vibrator:s0
+/sys/sweep2sleep/sweep2sleep                                          u:object_r:sysfs_s2s:s0
+
 # FPS Info
 /sys/devices/virtual/graphics/fb0/measured_fps           u:object_r:sysfs_fps:s0
 
@@ -46,6 +53,5 @@
 /sys/devices/platform/elan_alsps(/.*)?                                     u:object_r:sysfs_sensors:s0
 
 # Touchscreen
-/vendor/bin/hw/vendor\.lineage\.touch@1\.0-service\.kuntao                 u:object_r:hal_lineage_touch_default_exec:s0
 /sys/board_properties/tpd_glove_status                                     u:object_r:sysfs_touchpanel:s0
 /sys/board_properties/tpd_suspend_status                                   u:object_r:sysfs_touchpanel:s0

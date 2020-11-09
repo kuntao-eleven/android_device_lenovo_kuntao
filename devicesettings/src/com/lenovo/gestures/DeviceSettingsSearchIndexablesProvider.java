@@ -23,7 +23,6 @@ import android.provider.SearchIndexablesProvider;
 
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_CLASS_NAME;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_ICON_RESID;
-import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_ACTION;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_RANK;
@@ -39,7 +38,7 @@ public class DeviceSettingsSearchIndexablesProvider extends SearchIndexablesProv
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
             new SearchIndexableResource(1, R.xml.button_panel,
                     ButtonSettingsActivity.class.getName(),
-                    R.drawable.ic_settings_additional_buttons),
+                    R.drawable.ic_gestures),
     };
 
     @Override
@@ -60,7 +59,6 @@ public class DeviceSettingsSearchIndexablesProvider extends SearchIndexablesProv
         ref[COLUMN_INDEX_XML_RES_RESID] = sir.xmlResId;
         ref[COLUMN_INDEX_XML_RES_CLASS_NAME] = null;
         ref[COLUMN_INDEX_XML_RES_ICON_RESID] = sir.iconResId;
-        ref[COLUMN_INDEX_XML_RES_INTENT_ACTION] = "com.android.settings.action.EXTRA_SETTINGS";
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.lenovo.gestures";
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS] = sir.className;
         return ref;

@@ -170,7 +170,6 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    DeviceSettings \
     android.hardware.biometrics.fingerprint@2.0-service.kuntao
 
 # FM
@@ -247,6 +246,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
+
+# Lenovo stuff
+PRODUCT_PACKAGES += \
+    LenovoParts \
+    DeviceSettings \
+    init.lenovo.parts.rc
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -379,10 +384,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
     vendor.lineage.livedisplay@2.0-service-sysfs
-
-# Touch features
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.kuntao
 
 # Trust HAL
 PRODUCT_PACKAGES += \
