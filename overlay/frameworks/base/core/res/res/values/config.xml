@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">false</bool>
+    <bool name="config_showNavigationBar">true</bool>
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -284,12 +284,6 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
-         This mechanism allows the host to remain in suspend state and the dongle to actively
-         scan and wake the host when a configured SSID is detected by the dongle. This chipset
-         capability can provide power savings when wifi needs to be always kept on. -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
-
     <!-- IWLAN -->
     <string name="config_wlan_data_service_package" translatable="false">vendor.qti.iwlan</string>
     <string name="config_wlan_network_service_package" translatable="false">vendor.qti.iwlan</string>
@@ -361,28 +355,6 @@
         <item>0,1</item>
         <item>7,1</item>
         <item>9,1</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         USB interfaces.  If the device doesn't want to support tethering over USB this should
-         be empty.  An example would be "usb.*" -->
-    <string-array translatable="false" name="config_tether_usb_regexs">
-        <item>usb\\d</item>
-        <item>rndis\\d</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
-         should be empty.  An example would be "softap.*" -->
-    <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>wlan0</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
-         should be empty. -->
-    <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>bt-pan</item>
     </string-array>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
@@ -495,32 +467,14 @@
         <item>ehrpd:4094,87380,1048576,4096,16384,262144</item>
     </string-array>
 
-    <!-- When true, the tethering upstream network follows the current default
-         Internet network (except when the current default network is mobile,
-         in which case a DUN network will be used if required). -->
-    <bool translatable="false" name="config_tether_upstream_automatic">true</bool>
-
-    <!-- Configure wifi tcp buffersizes in the form:
-         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,8388608,262144,524288,4194304</string>
-
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
-
-    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
-
-    <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
-    <string name="config_ims_package">org.codeaurora.ims</string>
-
-    <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
-    <bool name="config_dynamic_bind_ims">true</bool>
 
     <!-- Boolean indicating if current platform supports HFP inband ringing -->
      <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
@@ -545,20 +499,6 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">65</integer>
-
-    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
-         This integer should equal the sum of the corresponding value for each
-         of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Assistant (search)
-            16 - App switch
-            32 - Camera
-            64 - Volume rocker
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">65</integer>
 
     <!-- Paths to the libraries that contain device specific key handlers -->
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
@@ -612,26 +552,11 @@
          and one pSIM) -->
     <integer name="config_num_physical_slots">2</integer>
 
-    <!-- Flag indicating whether we should enable smart battery. -->
-    <bool name="config_smart_battery_available">true</bool>
-
     <!-- The list of components which should be automatically disabled for a specific device. -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
     </string-array>
-
-    <!--Systeminfo for quick settings header -->
-    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
-    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
-    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
-    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
-    <integer name="config_sysCPUTempMultiplier">10</integer>
-    <integer name="config_sysBatteryTempMultiplier">10</integer>
-
-    <!-- Smart charging -->
-    <bool name="config_SmartChargingAvailable">true</bool>
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/battery_charging_enabled</string> 
 
     <!-- Delay that allows some content to arrive at the display before switching
          from DOZE to ON, in millis. -->
@@ -644,9 +569,6 @@
     <!-- Disable AOD by default -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
-    <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_supportSmartPixels">true</bool>
-
     <!-- If supported, are dreams enabled? (by default) -->
     <bool name="config_dreamsEnabledByDefault">false</bool>
 
@@ -656,12 +578,6 @@
     <!-- Whether to post reset runnable for all clients. Needed for some older
          vendor fingerprint HAL implementations. -->
     <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
-
-    <!-- Whether or not we should show vendor mismatch message -->
-    <bool name="config_show_vendor_mismatch_message">false</bool>
-
-    <!-- Whether power menu advanced reboot enabled by default -->
-    <bool name="config_powermenuadvanceddefault">true</bool>
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
