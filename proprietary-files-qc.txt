@@ -163,6 +163,14 @@ vendor/bin/hw/android.hardware.drm@1.2-service.widevine|b626d9bbf7043c66c8ef903c
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|75335443a33a06a03eecfa714dfe9f1c0c4df2b1
 vendor/lib64/libwvhidl.so|4af61fdcf1186700ea7ee23c607fb9ce5fd0f0e8
 
+# DRM - Clearkey - from - Kona
+vendor/bin/hw/android.hardware.drm@1.3-service.clearkey
+vendor/etc/init/android.hardware.drm@1.3-service.clearkey.rc
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.clearkey.xml
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
+
 # FM Radio - from LA.UM.8.6.r1-04700-89xx.0
 vendor/bin/fm_qsoc_patches|82ab33e928933b8077e77c1532a58b61a3551932
 vendor/etc/init/init.qti.fm.rc|07cb64e2109a900eb6e1da1950fddba954d0f8d6
