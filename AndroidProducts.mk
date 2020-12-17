@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rr_kuntao.mk
+    $(LOCAL_DIR)/aosp_kuntao.mk
 
 COMMON_LUNCH_CHOICES := \
-    rr_kuntao-user \
-    rr_kuntao-userdebug \
-    rr_kuntao-eng
+    aosp_kuntao-user \
+    aosp_kuntao-userdebug \
+    aosp_kuntao-eng
