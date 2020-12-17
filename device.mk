@@ -413,7 +413,8 @@ PRODUCT_PACKAGES += \
 # libstdc++: camera.msm8953
 PRODUCT_PACKAGES += \
     vndk_package \
-    libstdc++.vendor
+    libstdc++.vendor \
+    com.android.vndk.current.on_vendor
 
 # VNDK protobuff
 PRODUCT_COPY_FILES += \
