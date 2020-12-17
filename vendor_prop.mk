@@ -70,6 +70,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.disable_wb_ubwc=1 \
     vendor.gralloc.enable_fb_ubwc=1
 
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpm.feature=0
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
