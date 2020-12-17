@@ -158,9 +158,10 @@ vendor/lib64/libssd.so|33d717f793c2579e3bd17b5ce6534cb68c12887d
 vendor/lib64/libops.so|03dc247cbf3e75f8dedf05b779eb65006f7334cd
 vendor/lib64/libspl.so|609af852a498b0a50eb00f2d75913e0fbcbbaee6
 
-# DRM - Widevine - LA.UM.8.6.r1-04000-89xx.0
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|b626d9bbf7043c66c8ef903c9d0e5183fc47388d
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|75335443a33a06a03eecfa714dfe9f1c0c4df2b1
+# DRM - Widevine - from - kona
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|b626d9bbf7043c66c8ef903c9d0e5183fc47388d
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|75335443a33a06a03eecfa714dfe9f1c0c4df2b1
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib64/libwvhidl.so|4af61fdcf1186700ea7ee23c607fb9ce5fd0f0e8
 
 # DRM - Clearkey - from - Kona
