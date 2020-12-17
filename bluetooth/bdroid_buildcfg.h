@@ -20,7 +20,6 @@
 #define BTM_DEF_LOCAL_NAME             "Lenovo P2a42"
 
 #define BLE_VND_INCLUDED               TRUE
-#define BLUETOOTH_QTI_SW               TRUE
 #define BTM_SCO_ENHANCED_SYNC_ENABLED  FALSE
 #define MAX_ACL_CONNECTIONS            16
 #define MAX_L2CAP_CHANNELS             32
