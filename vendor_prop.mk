@@ -92,6 +92,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Dex2oat64
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true
+
 # Fm
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hw.fm.init=0
