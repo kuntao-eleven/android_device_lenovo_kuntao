@@ -27,6 +27,7 @@
 
 # Root files
 /firmware(/.*)?                                                            u:object_r:firmware_file:s0
+/persist(/.*)?                                                             u:object_r:mnt_vendor_file:s0
 
 # Lenovo parts
 /sys/devices/soc/qpnp-flash-led-22/leds/led:torch_0/max_brightness          u:object_r:sysfs_torch:s0
