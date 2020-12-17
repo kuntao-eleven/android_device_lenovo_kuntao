@@ -256,7 +256,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
-    setprop persist.vendor.fp.gesture 1
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
@@ -291,7 +290,6 @@ on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
 on charger
-    load_system_props
     start qcom-post-boot
 
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
