@@ -123,10 +123,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
@@ -181,8 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Fwk-detect
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor
+    libqti_vndfwk_detect
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -412,16 +407,21 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # VNDK
-# libstdc++: camera.msm8953
 PRODUCT_PACKAGES += \
-    vndk_package \
-    libstdc++.vendor \
+    vndk-ext \
+    vndk-sp \
     com.android.vndk.current.on_vendor
 
 # VNDK protobuff
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite.so
+
+# VNDK dexfile
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vndk-dex/libdexfile_support-v30-arm.so:$(TARGET_COPY_OUT_VENDOR)/apex/com.android.vndk.current.on_vendor/lib/libdexfile_support.so \
+    $(LOCAL_PATH)/vndk-dex/libdexfile_support-v30-arm64.so:$(TARGET_COPY_OUT_VENDOR)/apex/com.android.vndk.current.on_vendor/lib64/libdexfile_support.so \
+    $(LOCAL_PATH)/vndk-dex/vndksp.libraries.30.txt:$(TARGET_COPY_OUT_VENDOR)/apex/com.android.vndk.current.on_vendor/etc/vndksp.libraries.30.txt
 
 # Whitelisted apps
 PRODUCT_COPY_FILES += \
