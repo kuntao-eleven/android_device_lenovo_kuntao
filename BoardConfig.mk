@@ -107,7 +107,8 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # Fingerprint
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.0-service.kuntao=24 \
-    /vendor/bin/vfmService=24
+    /vendor/bin/vfmService=24 \
+    /vendor/bin/mm-qcamera-daemon=24
 
 # FM
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
