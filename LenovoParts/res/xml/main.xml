@@ -44,6 +44,16 @@
             android:icon="@drawable/ic_flashlight" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/sound_title">
+        <PreferenceScreen
+            android:key="sound_control"
+            android:fragment="com.lenovo.parts.sound.SoundControlSettings"
+            android:summary="@string/sound_control_summary"
+            android:title="@string/sound_control_title"
+            android:icon="@drawable/ic_sound_control" />
+    </PreferenceCategory>
+
    <PreferenceCategory
         android:title="@string/fp_title">
     <Preference

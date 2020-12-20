@@ -56,6 +56,15 @@ on enable-low-power
     chmod 0660 /sys/sweep2sleep/sweep2sleep
     chown system system /sys/sweep2sleep/sweep2sleep
 
+    # Sound control
+    chmod 0660 /sys/kernel/sound_control/headphone_gain
+    chmod 0660 /sys/kernel/sound_control/speaker_gain
+    chmod 0660 /sys/kernel/sound_control/mic_gain
+    chown system system /sys/kernel/sound_control/headphone_gain
+    chown system system /sys/kernel/sound_control/speaker_gain
+    chown system system /sys/kernel/sound_control/mic_gain
+    restorecon_recursive /sys/kernel/sound_control
+
 on property:sys.boot_completed=1
     trigger enable-low-power
 

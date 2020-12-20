@@ -16,7 +16,7 @@
 <resources>
     <string name="app_name">Kuntao Resurrected</string>
     <string name="advanced_settings">Kuntao Resurrected</string>
-    <string name="advanced_settings_summary">Cihaza özel seçenekler | By Astridxx</string>
+    <string name="advanced_settings_summary">Cihaza özel ayarlar</string>
 
     <!-- Vibration -->
     <string name="category_vibrator">Titreşim</string>
@@ -69,7 +69,15 @@
     <!-- Fp gestures -->
     <string name="fp_title">Hareketler</string>
     <string name="fp_settings_title">Parmak izi hareketleri</string>
-    <string name="fp_settings_summary">Diğer parmak izi hareketleri</string>
+    <string name="fp_settings_summary">Kuntao parmak izi hareketleri</string>
+
+    <!-- Sound control -->
+    <string name="sound_title">Ses</string>
+    <string name="sound_control_title">Ses kontrolü</string>
+    <string name="sound_control_summary">Kulaklık, mikrofon ve hoparlör ses seviyesini ayarlayın</string>
+    <string name="speaker_gain">Hoparlör ses seviyesi</string>
+    <string name="headphone_gain">Kulaklık ses seviyesi</string>
+    <string name="mic_gain">Mikrofon ses seviyesi</string>
 
     <!-- s2s -->
     <string name="s2s_title">Kaydırarak uyutma</string>

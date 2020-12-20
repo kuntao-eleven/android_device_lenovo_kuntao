@@ -46,6 +46,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceManager;
 import androidx.preference.TwoStatePreference;
 
+import com.lenovo.parts.sound.SoundControlActivity;
+
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -70,6 +72,16 @@ public class DeviceSettings extends PreferenceFragment implements
         setPreferencesFromResource(R.xml.main, rootKey);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceScreen mSoundControlPref = (PreferenceScreen) findPreference("sound_control");
+        mSoundControlPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+             @Override
+             public boolean onPreferenceClick(Preference preference) {
+                 Intent intent = new Intent(getActivity().getApplicationContext(), SoundControlActivity.class);
+                 startActivity(intent);
+                 return true;
+             }
+        });
 
         PreferenceScreen mKcalPref = (PreferenceScreen) findPreference("kcal");
         mKcalPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {

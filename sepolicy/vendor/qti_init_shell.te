@@ -12,6 +12,9 @@ allow qti_init_shell sysfs_torch:dir search;
 allow qti_init_shell sysfs_torch:file rw_file_perms;
 allow qti_init_shell sysfs_touchpanel:dir search;
 allow qti_init_shell sysfs_touchpanel:file rw_file_perms;
+allow qti_init_shell sysfs_headphonegain:file rw_file_perms;
+allow qti_init_shell sysfs_micgain:file rw_file_perms;
+allow qti_init_shell sysfs_speakergain:file rw_file_perms;
 
 # Radio
 typeattribute qti_init_shell data_between_core_and_vendor_violators;

@@ -131,7 +131,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     camera.msm8953 \
     libmm-qcamera \
-    Camera2
+    GCam
 
 # Display
 PRODUCT_PACKAGES += \
@@ -163,6 +163,10 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     XiaomiDoze
+
+# DPM
+PRODUCT_PACKAGES += \
+    libshim_dpmframework
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -223,7 +227,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
-    libui_shim
+    libvt_shim
 
 # Keylayout
 PRODUCT_COPY_FILES += \

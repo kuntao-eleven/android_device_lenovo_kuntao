@@ -26,6 +26,10 @@ import android.text.TextUtils;
 
 import androidx.preference.PreferenceManager;
 
+import com.lenovo.parts.sound.HeadphoneGainPreference;
+import com.lenovo.parts.sound.SpeakerGainPreference;
+import com.lenovo.parts.sound.MicGainPreference;
+
 public class Startup extends BroadcastReceiver {
 
     private void restore(String file, boolean enabled) {
@@ -55,5 +59,8 @@ public class Startup extends BroadcastReceiver {
         String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.S2S_KEY, "0");
         Utils.writeValue(DeviceSettings.FILE_S2S_TYPE, storedValue);
         DisplayCalibration.restore(context);
+        HeadphoneGainPreference.restore(context);
+        SpeakerGainPreference.restore(context);
+        MicGainPreference.restore(context);
     }
 }
