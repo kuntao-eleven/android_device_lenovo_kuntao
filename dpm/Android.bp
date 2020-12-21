@@ -14,7 +14,7 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "libshim_dpmframework",
+    name: "libdpmframework_shim",
     srcs: ["strdup16to8.cpp", "strdup8to16.cpp"],
     shared_libs: ["libcutils"],
     compile_multilib: "64",
