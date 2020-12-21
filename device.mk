@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
 
 # DPM
 PRODUCT_PACKAGES += \
-    libshim_dpmframework
+    libdpmframework_shim
 
 # Fingerprint
 PRODUCT_PACKAGES += \

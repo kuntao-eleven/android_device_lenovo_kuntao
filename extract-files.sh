@@ -45,7 +45,7 @@ source "${HELPER}"
 function blob_fixup() {
     case "${1}" in
     system_ext/lib64/libdpmframework.so)
-        "$PATCHELF" --add-needed libshim_dpmframework.so "${2}"
+        "$PATCHELF" --add-needed libdpmframework_shim.so "${2}"
         ;;
     system_ext/lib64/lib-imsvideocodec.so)
         "$PATCHELF" --add-needed libvt_shim.so "${2}"
