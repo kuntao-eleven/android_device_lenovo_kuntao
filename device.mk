@@ -174,9 +174,8 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libfmjni
 
 # Fwk-detect
 PRODUCT_PACKAGES += \
@@ -337,7 +336,6 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
-    init.qti.fm.sh \
     init.lenovo.common.rc \
     init.recovery.qcom.rc \
     init.qcom.usb.rc \

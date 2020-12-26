@@ -172,10 +172,6 @@ vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 
-# FM Radio - from LA.UM.8.6.r1-04700-89xx.0
-vendor/bin/fm_qsoc_patches|82ab33e928933b8077e77c1532a58b61a3551932
-vendor/etc/init/init.qti.fm.rc|07cb64e2109a900eb6e1da1950fddba954d0f8d6
-
 # Gatekeeper - from LA.UM.8.6.r1-04700-89xx.0
 vendor/lib64/hw/gatekeeper.msm8953.so|b3a9d78faa65029b0a20f2ff6dfe986bc80b64c1
 

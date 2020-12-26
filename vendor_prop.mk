@@ -99,10 +99,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
 
-# Fm
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.hw.fm.init=0
-
 # Factory reset protection
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/config
