@@ -161,8 +161,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service
 
 # Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+# PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # DPM
 PRODUCT_PACKAGES += \
