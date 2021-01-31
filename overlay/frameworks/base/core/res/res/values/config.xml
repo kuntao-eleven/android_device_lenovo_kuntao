@@ -533,6 +533,9 @@
     <!-- If supported, are dreams enabled? (by default) -->
     <bool name="config_dreamsEnabledByDefault">false</bool>
 
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">true</bool>
+
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
     <bool name="config_allowMediaUidForCameraServiceProxy">true</bool>
 
