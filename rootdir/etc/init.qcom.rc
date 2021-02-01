@@ -59,6 +59,10 @@ on early-boot
     chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
 
 on boot
+    # FPS Info
+    chown system graphics /sys/class/graphics/fb0/measured_fps
+    chmod 0666 /sys/class/graphics/fb0/measured_fps
+
     # SSR setup
     write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
