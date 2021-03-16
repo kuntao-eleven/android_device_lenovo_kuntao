@@ -26,15 +26,6 @@
     <!-- Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
 
-    <!-- The CPU temperature sensor path, defaults to empty -->
-    <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
-
-    <!-- The CPU temperature divider, if needed -->
-    <integer name="config_cpuTempDivider" translatable="false">10</integer>
-
-    <!-- The CPUs to display in CPUInfoService view -->
-    <string name="config_displayCpus" translatable="false">0,4</string>
-
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
 
