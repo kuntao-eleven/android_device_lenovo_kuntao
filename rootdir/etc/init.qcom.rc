@@ -100,6 +100,9 @@ on post-fs-data
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics
 
+    # Create directory used for dump collection
+    mkdir /data/vendor/ssrdump 0770 root system
+
     # Create directory used by media clients
     mkdir /data/vendor/media 0770 mediacodec media
 
